@@ -11,25 +11,25 @@ jobs:
 
       
 
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2.3.1  
+      ##- name: Checkout 🛎️
+        ##uses: actions/checkout@v2.3.1  
 
-      - uses: cschleiden/replace-tokens@v1
-        with:
-          files: '["**/*.html"]'
-        env:
-          PROBANDO: ${{ secrets.PROBANDO }}
-          token: adsdasdasda
+      ##- uses: cschleiden/replace-tokens@v1
+        ##with:
+          ##files: '["**/*.html"]'
+        ##env:
+          ##PROBANDO: ${{ secrets.PROBANDO }}
+          ##token: adsdasdasda
       
       - name: Find and Replace - Using Secrets
         run: find *.html -type f -exec sed -i ''s/#{PROBANDO}#/${{ secrets.PROBANDO }}/g'' {} \;
       - name: Bash - Show html Contents
         run: cat index.html
-        
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
+          BRANCH: master
           FOLDER: .
 
