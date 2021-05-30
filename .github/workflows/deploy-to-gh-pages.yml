@@ -8,10 +8,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      
+
       - uses: cschleiden/replace-tokens@v1
         with:
-          files: '["index.html"]'
+          files: '["**/*.html"]'
         env:
           PROBANDO: ${{ secrets.PROBANDO }}
           token: adsdasdasda
