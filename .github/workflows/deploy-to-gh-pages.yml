@@ -21,10 +21,11 @@ jobs:
           PROBANDO: ${{ secrets.PROBANDO }}
           token: adsdasdasda
       
-        - name: Find and Replace - Using Secrets
-          run: find *.html -type f -exec sed -i ''s/#{PROBANDO}#/${{ secrets.PROBANDO }}/g'' {} \;
-        - name: Bash - Show html Contents
-          run: cat index.html
+      - name: Find and Replace - Using Secrets
+        run: find *.html -type f -exec sed -i ''s/#{PROBANDO}#/${{ secrets.PROBANDO }}/g'' {} \;
+      - name: Bash - Show html Contents
+        run: cat index.html
+        
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
