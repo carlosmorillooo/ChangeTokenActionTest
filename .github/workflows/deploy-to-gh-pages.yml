@@ -15,7 +15,8 @@ jobs:
         with:
           files: '["index.html"]'
         env:
-          TOKEN: ${{ secrets.PROBANDO }}
+          PROBANDO: ${{ secrets.PROBANDO }}
+          token: adsdasdasda
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
